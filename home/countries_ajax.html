@@ -61,9 +61,8 @@
 
 
         function success(data) {
-            let d = JSON.parse(data);
             console.log('загруженные через AJAX данные:');
-            console.log(d);
+            console.log( JSON.parse(data) );
         }
 
         function errorHandler(jqXHR,status,error) {
