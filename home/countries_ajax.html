@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <input type="button" value="ввод информации о стране" onclick="addCountry()">
+        <input type="button" value="получение информации о стране" onclick="getCountryInfo()">
+        <input type="button" value="перечень всех стран" onclick="listCountries()">
+        <input type="button" value="удаление информации о стране" onclick="deleteCountry()">
+    </div>
+
+    <script src='http://fe.it-academy.by/JQ/jquery.js'></script>
+
+    <script>
+        "use strict";
+
+        const countriesH = {};
+
+        function addCountry() {
+            let countryName = prompt("Введите название страны:");
+            let capitalName = prompt("Столица:");
+
+            countriesH[countryName] = capitalName;
+            console.log(countryName);
+            console.log(capitalName);
+
+            $.ajax("https://fe.it-academy.by/AjaxStringStorage2.php",
+                { f:'INSERT', n:countryName, v:JSON.stringify(capitalName), success:success, error:errorHandler }
+            );
+        }
+
+        function getCountryInfo(countryName) {
+            countryName = prompt("Укажите страну:");
+            
+            if ( countryName in countriesH )
+                console.log(`страна: ${countryName}, столица: ${ countriesH[countryName] }`);
+            else
+                console.log(`Нет информации о стране "${countryName}"!`);
+        }
+
+        function deleteCountry(countryName) {
+            countryName = prompt("Укажите страну, информацию о которой хотите удалить");
+
+            delete countriesH[countryName];
+        }
+
+        function listCountries() {
+            for (let CN in countriesH)
+                console.log(`страна: ${CN}, столица: ${ countriesH[CN] }`);
+        }
+
+        let countriesH2 = JSON.parse( JSON.stringify(countriesH) );
+
+
+
+        function success(data) {
+            console.log('загруженные через AJAX данные:');
+            console.log(data);
+        }
+
+        function errorHandler(jqXHR,status,error) {
+            alert(status + " " + error);
+        }
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="favicon.ico">
+    <style>
+        body {
+            background-color: #D0D98F;
+            color: white;
+            font-size: 32px;
+            margin-top: 3%;
+        }
+
+        h5 {
+            margin: 40px 0 20px;
+            font-family: Helvetica, Arial, sans-serif;
+            text-transform: lowercase;
+            color: #707C4F;
+        }
+
+        a {
+            color: #414463;
+            text-decoration: none;
+            text-shadow: 4px 2px 0 #D4C3AF;
+            margin: 5px 10px;
+        }
+
+        a:hover {
+            color: #B2B6BF;
+        }
+
+        a:focus {
+            color: #707C4F;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .base {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+
+        .checked {
+            color: #B2B6BF;
+        }
+
+        .additional {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            width: 80%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="base">
+            <div class="flex-container">
+                <a href="home/ANKETA/anketa.html" target="_blank" class="checked">ANKETA (проверено)</a>
+                <a href="home/TREESUM/treeSum.JS" target="_blank" class="checked">TREESUM (проверено)</a>
+                <a href="home/VOWELS/vowels.html" target="_blank" class="checked">VOWELS (проверено)</a>
+                <a href="home/ROOTS/roots.html" target="_blank">ROOTS</a>
+                <a href="home/MOOD/mood.html" target="_blank">MOOD</a>
+                <a href="home/COUNTRIES/countries.html" target="_blank">COUNTRIES</a>
+                <a href="home/DRINKS/DRINKS_HASH_FUNC/drinks_hash_func.html" target="_blank">DRINK_HASH_FUNC</a>
+                <a href="home/DRINKS/DRINKS_HASH_CLASS/drinks_hash_class.html" target="_blank">DRINK_HASH_CLASS</a>
+            </div>
+            <div class="flex-container">
+                <ul>
+                    <li><a href="home/VOWELS/vowels_arr_forEach.html" target="_blank">VOWELS_ARR_forEach</a></li>
+                    <li><a href="home/VOWELS/vowels_arr_filter.html" target="_blank">VOWELS_ARR_filter</a></li>
+                    <li><a href="home/VOWELS/vowels_arr_reduce.html" target="_blank">VOWELS_ARR_reduce</a></li>
+                </ul>
+                <a href="home/COUNTRIES/countries_ajax.html">ajax</a>
+            </div>
+        </div>
+
+        <h5>Дополнительные задания:</h5>
+        <div class="additional">
+            <a href="home/Additional/a2.html" target="_blank" class="checked">A2+ (&check;)</a>
+            <a href="home/Additional/a3.html" target="_blank" class="checked">A3+ (&check;)</a>
+            <a href="home/Additional/a4.html" target="_blank" class="checked">A4+ (&check;)</a>
+            <a href="home/Additional/b1.html" target="_blank" class="checked">B1+ (&check;)</a>
+            <a href="home/Additional/b2.html" target="_blank" class="checked">B2+ (&check;)</a>
+        </div>
+    </div>
+</body>
+</html>
