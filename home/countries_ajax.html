@@ -32,8 +32,7 @@
             console.log(capitalName);
 
             $.ajax("https://fe.it-academy.by/AjaxStringStorage2.php",
-                { f:'INSERT', data:JSON.stringify({
-                    n:countryName, v:capitalName,}), success:success, error:errorHandler }
+                { f:'INSERT', data: JSON.stringify({n:countryName, v:capitalName,}), success:success, error:errorHandler }
             );
         }
 
@@ -57,7 +56,7 @@
                 console.log(`страна: ${CN}, столица: ${ countriesH[CN] }`);
         }
 
-        let countriesH2 = JSON.parse( JSON.stringify(countriesH) );
+        // let countriesH2 = JSON.parse( JSON.stringify(countriesH) );
 
 
 
@@ -67,7 +66,7 @@
         }
 
         function errorHandler(jqXHR,status,error) {
-            alert(status + " " + error);
+            alert(status + "" + error);
         }
 
 
