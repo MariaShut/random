@@ -32,7 +32,8 @@
             console.log(capitalName);
 
             $.ajax("https://fe.it-academy.by/AjaxStringStorage2.php",
-                { f:'INSERT', n:countryName, v:JSON.stringify(capitalName), success:success, error:errorHandler }
+                { f:'INSERT', data:JSON.stringify({
+                    n:countryName, v:capitalName,}), success:success, error:errorHandler }
             );
         }
 
